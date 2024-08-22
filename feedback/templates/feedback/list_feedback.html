@@ -1,0 +1,27 @@
+{% extends 'feedback/base.html' %}
+
+{% block content %}
+
+<h2>Все отзывы</h2>
+<table>
+    <tr>
+        <th>Номер</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отзывы</th>
+        <th>Рейтинг</th>
+
+    </tr>
+    {% for i in object_list %}
+    <tr>
+        <th><a href="{{i.get_url}}">{{i.id}}</a></th>
+        <th>{{i.name}}</th>
+        <th>{{i.surname}}</th>
+        <th>{{i.feedback}}</th>
+        <th>{{i.rating}}</th>
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

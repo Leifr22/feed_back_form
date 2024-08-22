@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>  {% block title %} {% endblock %}  </title>
+    <link rel="stylesheet" href=" {% static 'feedback/field.css' %}">
+
+</head>
+<body>
+   {% block content %}
+
+   {% endblock %}
+   <link rel="stylesheet" href=" {% static 'feedback/table.css' %}">
+</body>
+
+</html>
