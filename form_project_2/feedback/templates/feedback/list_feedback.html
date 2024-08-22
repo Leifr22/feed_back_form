@@ -1,0 +1,44 @@
+{% extends 'feedback/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Все отзывы</h2>
+<table>
+    <tr>
+        <th>Номер</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отзывы</th>
+        <th>Рейтинг</th>
+
+    </tr>
+    {% for i in object_list %}
+    <tr>
+        <th><a href="{{i.get_url}}">{{i.id}}</a></th>
+        <th>{{i.name}}</th>
+        <th>{{i.surname}}</th>
+        <th>{{i.feedback}}</th>
+        <th>{{i.rating}}</th>
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block navigate %}
+      <nav class="list_pages">
+          <ul>
+              {% for p in paginator.page_range %}
+              {% if directors.number == p %}
+              <li class="page-num page-num-selected">{{p}}</li>
+              {% else %}
+              <li class="page-num">
+                  <a href="?page={{p}}">{{p}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+
+          </ul>
+      </nav>
+{% endblock %}
